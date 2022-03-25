@@ -1,17 +1,4 @@
---[[
-	dotdrawer.lua v1.0
-	dotdrawerは、ドット絵を描画するだけのシンプルなライブラリです。
-
-	使用例：
-	size = 10 --1マスのサイズ
-	data = {
-		{"0x000000", "0xffffff", "0x000000"}, --色コードで指定
-		{"0xffffff", nil, "0xffffff"},        --nilで透明
-		{"0x000000", "0xffffff", "0x000000"}
-	}
-	dotdrawer = dofile(obj.getinfo("script_path").."dotdrawer.lua")
-	dotdrawer.draw_dots(data, size)
-]]
+local version = "1.1"
 
 local function draw_dots(data, size)
 	if data==nil then
@@ -21,7 +8,6 @@ local function draw_dots(data, size)
 		return
 	end
 
-	--データの高さと幅を取得
 	local h = #data
 	local c = 0
 	for i=1, #data do
@@ -46,5 +32,6 @@ local function draw_dots(data, size)
 end
 
 return {
-	draw_dots = draw_dots
+	draw_dots = draw_dots,
+	version = version
 }
